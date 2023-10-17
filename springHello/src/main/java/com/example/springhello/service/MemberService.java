@@ -2,9 +2,6 @@ package com.example.springhello.service;
 
 import com.example.springhello.domain.Member;
 import com.example.springhello.repository.MemberRepository;
-import com.example.springhello.repository.MemoryMemberRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,7 +25,7 @@ public class MemberService {
     }
 
     private void validateDuplicateMember(Member member) {
-        memberRepository.findByNmae(member.getName())
+        memberRepository.findByName(member.getName())
                 .ifPresent(m -> {
                     throw new IllegalStateException("이미 존재하는 회원입니다.");
                 });

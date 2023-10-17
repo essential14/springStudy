@@ -1,0 +1,17 @@
+231017
+--
+h2 디비 시작
+---
+C:\Project\Study_Source\h2\bin  
+경로에서 cmd 
+h2.bat << 디비 실행
+--
+데이터베이스 파일 생성 방법
+jdbc:h2:~/test (최초 한번)
+~/test.mv.db 파일 생성 확인
+이후부터는 jdbc:h2:tcp://localhost/~/test 이렇게 접속
+--
+
+default as identity (널값으로 들어오면 디비가 아이디 넣어줌)
+
+Optional 뭐임

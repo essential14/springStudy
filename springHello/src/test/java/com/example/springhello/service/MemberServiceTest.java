@@ -1,7 +1,6 @@
 package com.example.springhello.service;
 
 import com.example.springhello.domain.Member;
-import com.example.springhello.repository.MemoryMemberRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -19,6 +18,7 @@ class MemberServiceTest {
         memberRepository = new MemoryMemberRepository();
         memberService = new MemberService(memberRepository);
     }
+
     @AfterEach
     public void afterEach() {
         memberRepository.clearStore();
