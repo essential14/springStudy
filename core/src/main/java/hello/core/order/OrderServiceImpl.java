@@ -16,7 +16,7 @@ public class OrderServiceImpl implements OrderService{
 
     // 인터페이스에만 의존하도록 변경
     // 이대로 실행하면 구현체가 없어서 오류 발생
-    private DiscountPolicy discountPolicy;
+    private final DiscountPolicy discountPolicy;
 
     // AppConfig 와 생성자 주입을 통해 추상화
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
@@ -30,5 +30,10 @@ public class OrderServiceImpl implements OrderService{
         int discountPrice = discountPolicy.discount(member, itemPrice);
 
         return new Order(memberId, itemName, itemPrice, discountPrice);
+    }
+
+    //테스트 용도
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
     }
 }
