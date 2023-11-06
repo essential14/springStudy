@@ -26,6 +26,7 @@ public class AppConfig {
     //call AppConfig.orderService
     //call AppConfig.memberRepository
 
+
     //실제 호출 순서
     //call AppConfig.memberService
     //call AppConfig.memberRepository 이게 한 번만 호출 됨.
