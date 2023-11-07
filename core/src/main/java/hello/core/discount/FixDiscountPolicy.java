@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-@Qualifier("fixDiscountPolicy")
 // component 를 붙이면 NoUniqueBeanDefinitionException 오류 발생 (OrderServiceImpl 에서)
 public class FixDiscountPolicy implements DiscountPolicy {
 
