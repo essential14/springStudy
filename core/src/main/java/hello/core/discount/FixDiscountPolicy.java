@@ -2,10 +2,12 @@ package hello.core.discount;
 
 import hello.core.member.Grade;
 import hello.core.member.Member;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-//@Component
-//// component 를 붙이면 NoUniqueBeanDefinitionException 오류 발생 (OrderServiceImpl 에서)
+@Component
+@Qualifier("fixDiscountPolicy")
+// component 를 붙이면 NoUniqueBeanDefinitionException 오류 발생 (OrderServiceImpl 에서)
 public class FixDiscountPolicy implements DiscountPolicy {
 
     private int discountFixAmount = 1000;
